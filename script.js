@@ -1,7 +1,17 @@
-let searchBtn = document.querySelector(".search-icon");
-let searchInput = document.querySelector("#search-input");
+"use strict";
 
-searchBtn.addEventListener("click", function () {
-  searchInput.classList.toggle("width");
-  searchInput.style.transition = "width 2s";
+let btnMain = document.getElementById("btn-main");
+let body = document.querySelector("body");
+
+function getRandomColor() {
+  let letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+btnMain.addEventListener("click", function () {
+  body.style.backgroundColor = getRandomColor();
 });
